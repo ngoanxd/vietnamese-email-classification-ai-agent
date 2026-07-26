@@ -20,7 +20,8 @@ An intelligent AI Agent for Vietnamese email management that combines **Machine 
 # 🏗️ System Architecture
 
 <p align="center">
-<img src="images/system_architecture.png" width="900">
+<img <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/320d3a7a-7b8a-4b6a-a7ef-6fb51c5f1363" />
+
 </p>
 
 The system consists of four major components:
