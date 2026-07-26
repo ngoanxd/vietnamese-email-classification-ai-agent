@@ -1,0 +1,8 @@
+langgraph
+langchain-core
+langchain-openai
+requests
+torch
+transformers
+beautifulsoup4
+streamlit
