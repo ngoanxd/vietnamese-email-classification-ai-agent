@@ -386,11 +386,104 @@ https://huggingface.co/ngcam522/phobertemailspam
 ```
 
 ---
+# 🖥️ User Interface
+
+The AI Agent provides a simple web interface built with **Streamlit**, allowing users to configure email credentials, Telegram settings, and interact with the workflow in real time.
+
+Main features:
+
+- Configure Gmail credentials
+- Configure Telegram Bot settings
+- Start the AI Agent
+- View email summaries
+- Review AI-generated replies
+- Monitor the workflow execution
+
+<p align="center">
+<img width="2048" height="956" alt="image" src="https://github.com/user-attachments/assets/a5dca1a2-c33d-4135-875d-edce9dc13fa4" />
+
+</p>
+
+---
+# ⚡ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-repository.git
+
+cd your-repository
+```
+
+Create a virtual environment (optional)
+
+```bash
+python -m venv venv
+```
+
+Activate the environment
+
+Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+Install the required packages
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+# ▶️ Usage
+
+Launch the Streamlit application
+
+```bash
+streamlit run app.py
+```
+
+After opening the web interface, provide the following configuration:
+
+| Setting | Description |
+|----------|-------------|
+| Gmail Address | Your Gmail account |
+| Gmail App Password | Gmail App Password (16 characters) |
+| Telegram Bot Token | Bot token created with BotFather |
+| Telegram Chat ID | Your Telegram chat ID |
+
+Once the configuration is completed:
+
+1. Connect to your Gmail account.
+2. The AI Agent continuously monitors unread emails.
+3. PhoBERT classifies each email as **Spam** or **Not Spam**.
+4. If the email is **Not Spam**, the LLM analyzes its content.
+5. The LLM generates:
+   - Email summary
+   - Reply recommendation
+   - Draft reply
+6. The summary and draft reply are sent to Telegram.
+7. The user can:
+   - Approve
+   - Modify
+   - Reject
+8. If approved, the email is automatically sent through Gmail.
+
+---
+
 
 # 🛠️ Tech Stack
 
 - Python
 - FastAPI
+- Streamlit
 - HuggingFace Transformers
 - PhoBERT
 - LangGraph
