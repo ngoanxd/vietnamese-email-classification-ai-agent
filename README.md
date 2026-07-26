@@ -4,16 +4,16 @@ An intelligent AI Agent for Vietnamese email management that combines **Machine 
 
 ---
 
-# 🚀 Features
+# ✨ Features
 
-- 📥 Automatically read unread emails from Gmail
-- 🛡️ Spam / Not Spam classification using PhoBERT
-- 🧠 Email understanding using Llama-3.3-70B
-- 📝 Automatic email summarization
-- ✉️ Draft professional email replies
-- 🤖 LangGraph-based AI Agent workflow
-- 👨‍💻 Human-in-the-Loop approval via Telegram
-- 📤 Automatically send approved emails
+- Read unread emails from Gmail
+- Classify emails as Spam or Not Spam using PhoBERT
+- Analyze email content with Llama-3.3-70B
+- Generate concise email summaries
+- Draft context-aware email replies
+- Orchestrate the workflow with LangGraph
+- Support Human-in-the-Loop approval via Telegram
+- Automatically send approved replie
 
 ---
 
@@ -355,9 +355,9 @@ to Telegram.
 
 The user can:
 
-- ✅ Approve
-- ✏️ Modify
-- ❌ Reject
+- Approve
+-  Modify
+-  Reject
 
 Only approved emails are sent.
 
