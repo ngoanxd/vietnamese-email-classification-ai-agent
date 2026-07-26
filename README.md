@@ -246,7 +246,17 @@ Test Evaluation
 
 ---
 
-## PhoBERT
+## PhoBERT with Parameter-Efficient Fine-Tuning (PEFT)
+
+A lightweight fine-tuning strategy was adopted by freezing the entire PhoBERT encoder and training only a custom classifier head.
+
+| Configuration | Value |
+|--------------|-------|
+| Base Model | `vinai/phobert-base` |
+| Fine-tuning Strategy | PEFT |
+| Trainable Parameters | ~592K |
+| Reduction | ~227× fewer trainable parameters |
+| Benefit | Lower memory usage and faster training |
 
 ```text
 Dataset
@@ -273,30 +283,65 @@ Test
 # ⚙️ PhoBERT Configuration
 
 | Item | Value |
-|------|------|
-| Base Model | vinai/phobert-base |
+|-------|-------|
+| Base Model | `vinai/phobert-base` |
 | Hidden Size | 768 |
-| Fine-tuning | PEFT |
+| Fine-Tuning Strategy | PEFT |
 | Framework | HuggingFace Transformers |
 | Optimizer | AdamW |
+| Learning Rate | 1e-4 |
+| Dropout Rate | 0.2 |
 | Early Stopping | ✓ |
-| Threshold Optimization | ✓ |
+| Threshold Optimization | 0.9 |
+
 
 ---
 
 # 📊 Experimental Results
 
-(Add your benchmark table here)
+## 1. Performance with the Default Decision Threshold
 
-| Model | Accuracy | Precision | Recall | F1 |
-|--------|----------|-----------|--------|----|
-| Logistic Regression | | | | |
-| Decision Tree | | | | |
-| Random Forest | | | | |
-| XGBoost | | | | |
-| PhoBERT | | | | |
+The PhoBERT-PEFT model was first evaluated on the independent test set using the default decision threshold of **0.5**.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ed15a8bc-dfcb-467f-9914-e767335c25a1" width="700">
+</p>
+
+<p align="center"><i>Figure 1. Classification performance on the test set with the default threshold (0.5).</i></p>
 
 ---
+
+## 2. Decision Threshold Optimization
+
+To better satisfy the business objective, the decision threshold was optimized using the **validation set**. Different threshold values were evaluated, and **0.9** was selected as the optimal threshold because it achieved the best trade-off between Precision and Recall.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a4fdca73-e9f5-407c-afad-a6140acbbc8d" width="450">
+</p>
+
+<p align="center"><i>Figure 2. Threshold selection based on validation performance.</i></p>
+
+---
+
+## 3. Final Evaluation
+
+After selecting the optimal threshold (**0.9**), the final PhoBERT-PEFT model was evaluated on the independent test set.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/928d6efc-8bd3-406c-9051-606d5ab07c29" width="450">
+</p>
+
+<p align="center"><i>Figure 3. Final performance of the PhoBERT-PEFT model on the test set using the optimized decision threshold.</i></p>
+
+---
+
+### Key Findings
+
+- PhoBERT-PEFT achieved the best overall performance among all evaluated models.
+- Optimizing the decision threshold from **0.5** to **0.9** improved the balance between Precision and Recall for the target business objective.
+- The final model was selected for deployment and integrated into the AI Agent email management workflow.
+
+
 
 # 👨‍💻 Human-in-the-Loop
 
