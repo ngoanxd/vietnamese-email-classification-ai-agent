@@ -340,7 +340,8 @@ After selecting the optimal threshold (**0.9**), the final PhoBERT-PEFT model wa
 
 - PhoBERT-PEFT achieved the best overall performance among all evaluated models.
 - Optimizing the decision threshold from **0.5** to **0.9** improved the balance between Precision and Recall for the target business objective.
-- The final model was selected for deployment and integrated into the AI Agent email management workflow.
+- After selecting the optimal architecture and decision threshold, the model was **retrained (refit) using the entire dataset** to maximize the amount of training data before deployment.
+- The refitted model was then deployed to **Hugging Face Hub** and integrated into the AI Agent email management workflow for production inference.
 
 
 
