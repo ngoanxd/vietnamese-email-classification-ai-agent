@@ -170,7 +170,6 @@ Distribution:
 The following models were benchmarked:
 
 - Logistic Regression
-- Decision Tree
 - Random Forest
 - XGBoost
 - PhoBERT (PEFT)
