@@ -310,34 +310,19 @@ All classification models were initially evaluated on the independent test set u
 <p align="center"><i>Figure 1. Classification performance on the test set with the default threshold (0.5).</i></p>
 
 ---
+### Comments
 
-## 2. Decision Threshold Optimization
+- PhoBERT achieved lower performance, likely due to the relatively small training dataset (~2,000 training samples), which may not be sufficient for a deep learning model to learn and optimize robust contextual representations effectively.
+- In contrast, traditional machine learning models combined with TF-IDF features demonstrated superior performance on this small-to-medium-sized dataset.
 
-To better satisfy the business objective, the decision threshold was optimized using the **validation set**. Different threshold values were evaluated, and **0.9** was selected as the optimal threshold because it achieved the best trade-off between Precision and Recall.
+### Selected Model for Deployment
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a4fdca73-e9f5-407c-afad-a6140acbbc8d" width="450">
-</p>
+**Logistic Regression** was selected as the final deployment model. Although **Random Forest** achieved slightly higher Precision, Logistic Regression was preferred because it obtained the highest **Recall for the Not Spam class (94.15%)**. This is particularly important for the business objective, as it minimizes the risk of incorrectly classifying legitimate emails as spam, thereby reducing the number of critical emails that may be missed.
 
-<p align="center"><i>Figure 2. Threshold selection based on validation performance.</i></p>
-
----
-
-## 3. Final Evaluation
-
-After selecting the optimal threshold (**0.9**), the final PhoBERT-PEFT model was evaluated on the independent test set.
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/928d6efc-8bd3-406c-9051-606d5ab07c29" width="450">
-</p>
-
-<p align="center"><i>Figure 3. Final performance of the PhoBERT-PEFT model on the test set using the optimized decision threshold.</i></p>
-
----
 
 ### Key Findings
 
-- PhoBERT-PEFT achieved the best overall performance among all evaluated models.
+- **Logistic Regression** achieved the best overall performance among all evaluated models.
 - Optimizing the decision threshold from **0.5** to **0.9** improved the balance between Precision and Recall for the target business objective.
 - After selecting the optimal architecture and decision threshold, the model was **retrained (refit) using the entire dataset** to maximize the amount of training data before deployment.
 - The refitted model was then deployed to **Hugging Face Hub** and integrated into the AI Agent email management workflow for production inference.
