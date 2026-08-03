@@ -304,8 +304,7 @@ Test
 The PhoBERT-PEFT model was first evaluated on the independent test set using the default decision threshold of **0.5**.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/<img width="1080" height="632" alt="kquamodel" src="https://github.com/user-attachments/assets/71ba533d-5bf0-467b-8dee-eb75e8643ee5" />
-" width="700">
+ <img src="https://github.com/user-attachments/assets/71ba533d-5bf0-467b-8dee-eb75e8643ee5" width="700">
 </p>
 
 <p align="center"><i>Figure 1. Classification performance on the test set with the default threshold (0.5).</i></p>
