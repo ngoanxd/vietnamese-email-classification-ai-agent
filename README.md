@@ -301,7 +301,7 @@ Test
 
 ## 1. Performance with the Default Decision Threshold
 
-The PhoBERT-PEFT model was first evaluated on the independent test set using the default decision threshold of **0.5**.
+All classification models were initially evaluated on the independent test set using the default decision threshold of 0.5 before threshold optimization was performed. 
 
 <p align="center">
  <img src="https://github.com/user-attachments/assets/71ba533d-5bf0-467b-8dee-eb75e8643ee5" width="700">
