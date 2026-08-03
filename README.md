@@ -1,13 +1,13 @@
-# 🛡️ AI Agent for Vietnamese Email Management
+#  AI Agent for Vietnamese Email Management
 
-An intelligent AI Agent for Vietnamese email management that combines **Machine Learning**, **PhoBERT**, **Large Language Models (LLMs)** and **LangGraph** to automatically classify spam, summarize emails, generate replies, and assist users through a Human-in-the-Loop workflow.
+An intelligent AI Agent for Vietnamese email management that combines **Machine Learning** for classify emails as Spam or Not Spam , **PhoBERT**, **Large Language Models (LLMs)** and **LangGraph** to automatically classify spam, summarize emails, generate replies, and assist users through a Human-in-the-Loop workflow.
 
 ---
 
-# ✨ Features
+#  Features
 
 - Read unread emails from Gmail
-- Classify emails as Spam or Not Spam using PhoBERT
+- Classify emails as Spam or Not Spam using with Word Segmentation and TF-IDF Features
 - Analyze email content with Llama-3.3-70B
 - Generate concise email summaries
 - Draft context-aware email replies
@@ -17,7 +17,7 @@ An intelligent AI Agent for Vietnamese email management that combines **Machine 
 
 ---
 
-# 🏗️ System Architecture
+# System Architecture
 
 <p align="center">
 <img <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/320d3a7a-7b8a-4b6a-a7ef-6fb51c5f1363" />
@@ -35,7 +35,7 @@ The system consists of four major components:
 
 ---
 
-# 🔄 AI Agent Workflow
+#  AI Agent Workflow
 
 ```text
 Receive Email
@@ -75,7 +75,7 @@ End     LLM Analysis
 
 ---
 
-# ⚙️ LangGraph Design
+#  LangGraph Design
 
 ## State
 
@@ -139,7 +139,7 @@ Telegram Decision
 
 ---
 
-# 📊 Dataset
+#  Dataset
 
 ## Data Sources
 
@@ -163,7 +163,7 @@ Distribution:
 
 ---
 
-# 🤖 Models
+#  Models
 
 ## Spam Classification Models
 
@@ -177,8 +177,7 @@ The following models were benchmarked:
 
 Final deployed model:
 
-> ✅ PhoBERT PEFT
-
+> Logistic Regression 
 ---
 
 ## Large Language Model
@@ -199,7 +198,7 @@ Tasks:
 
 ---
 
-# 🧠 PhoBERT Pipeline
+#  PhoBERT Pipeline
 
 ```text
 Dataset
@@ -225,7 +224,7 @@ Final Model
 
 ---
 
-# 📈 Model Selection Strategy
+#  Model Selection Strategy
 
 ## Machine Learning
 
@@ -281,7 +280,7 @@ Test
 
 ---
 
-# ⚙️ PhoBERT Configuration
+#  PhoBERT Configuration
 
 | Item | Value |
 |-------|-------|
@@ -298,7 +297,7 @@ Test
 
 ---
 
-# 📊 Experimental Results
+#  Experimental Results
 
 ## 1. Performance with the Default Decision Threshold
 
@@ -345,7 +344,7 @@ After selecting the optimal threshold (**0.9**), the final PhoBERT-PEFT model wa
 
 
 
-# 👨‍💻 Human-in-the-Loop
+#  Human-in-the-Loop
 
 Instead of automatically sending generated replies, the AI Agent first sends:
 
@@ -364,7 +363,7 @@ Only approved emails are sent.
 
 ---
 
-# 🌐 Deployment
+#  Deployment
 
 ## Spam Classification API
 
@@ -382,11 +381,11 @@ Only approved emails are sent.
 ## Model Repository
 
 ```
-https://huggingface.co/ngcam522/phobertemailspam
+https://huggingface.co/ngcam522/email-spam-tfidf
 ```
 
 ---
-# 🖥️ User Interface
+#  User Interface
 
 The AI Agent provides a simple web interface built with **Streamlit**, allowing users to configure email credentials, Telegram settings, and interact with the workflow in real time.
 
@@ -405,7 +404,7 @@ Main features:
 </p>
 
 ---
-# ⚡ Installation
+#  Installation
 
 Clone the repository
 
@@ -442,7 +441,7 @@ pip install -r requirements.txt
 ```
 
 ---
-# ▶️ Usage
+#  Usage
 
 Launch the Streamlit application
 
@@ -479,7 +478,7 @@ Once the configuration is completed:
 ---
 
 
-# 🛠️ Tech Stack
+#  Tech Stack
 
 - Python
 - FastAPI
@@ -495,7 +494,7 @@ Once the configuration is completed:
 
 ---
 
-# 📌 Future Work
+#  Future Work
 
 - Attachment Processing
 - OCR Support
@@ -506,7 +505,7 @@ Once the configuration is completed:
 
 ---
 
-# 👤 Author
+#  Author
 
 **Bùi Thị Cẩm Ngoan**
 
